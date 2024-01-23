@@ -121,8 +121,8 @@ class GradientModulation(Callback):
             
                 if pl_module.coeff_t is not None and math.isnan(parms.grad.std()) is False and parms.grad.std().item() is not None:
                     parms.grad = parms.grad * pl_module.coeff_t + torch.zeros_like(parms.grad).normal_(0, parms.grad.std().item() + 1e-8) 
-                    print('parms.grad.std().item():', parms.grad.std().item())
-                    print('language gm calculated!')
+                    # print('parms.grad.std().item():', parms.grad.std().item())
+                    # print('language gm calculated!')
 
                 # if pl_module.coeff_t is not None:
                 #     parms.grad = parms.grad * pl_module.coeff_t + torch.zeros_like(parms.grad).normal_(0, 5e-5 + 1e-8) 
@@ -134,8 +134,8 @@ class GradientModulation(Callback):
                 
                 if pl_module.coeff_i is not None and math.isnan(parms.grad.std()) is False and parms.grad.std().item() is not None:
                     parms.grad = parms.grad * pl_module.coeff_i + torch.zeros_like(parms.grad).normal_(0, parms.grad.std().item() + 1e-8)
-                    print('parms.grad.std().item():', parms.grad.std().item())
-                    print('vision gm calculated!')
+                    # print('parms.grad.std().item():', parms.grad.std().item())
+                    # print('vision gm calculated!')
                     
                 # if pl_module.coeff_i is not None:
                 #     parms.grad = parms.grad * pl_module.coeff_i + torch.zeros_like(parms.grad).normal_(0, 5e-5 + 1e-8)
